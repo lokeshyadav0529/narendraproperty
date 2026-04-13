@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Riyasat Krishna Residency | Luxury Township</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#141e30,#243b55);
+color:#fff;
+}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(12px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav h2{
+font-weight:700;
+}
+
+/* HERO */
+.hero{
+height:80vh;
+background:url('12.jpeg') center/cover no-repeat;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+position:relative;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:3rem;
+margin-bottom:10px;
+}
+
+.hero p{
+margin-bottom:20px;
+}
+
+.btn{
+padding:12px 30px;
+background:#ffd54f;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SLIDER */
+.slider{
+max-width:1000px;
+margin:60px auto;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
+}
+
+.slide{
+display:none;
+}
+
+.slide img{
+width:100%;
+}
+
+/* DETAILS */
+.details{
+max-width:1000px;
+margin:50px auto;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:30px;
+border-radius:20px;
+text-align:center;
+}
+
+.details h2{
+color:#ffd54f;
+margin-bottom:10px;
+}
+
+/* FACILITIES */
+.facilities{
+max-width:1000px;
+margin:40px auto;
+background:rgba(255,255,255,0.1);
+padding:30px;
+border-radius:20px;
+}
+
+.facilities h3{
+text-align:center;
+margin-bottom:20px;
+color:#ffd54f;
+}
+
+.facilities ul{
+columns:2;
+}
+
+.facilities li{
+margin-bottom:10px;
+}
+
+/* CALL BUTTON */
+.call-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ffd54f;
+padding:15px 20px;
+border-radius:50px;
+color:#000;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+margin-top:40px;
+background:rgba(0,0,0,0.5);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+.hero h1{font-size:2rem;}
+.facilities ul{columns:1;}
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<h2>RIYASAT KRISHNA RESIDENCY</h2>
+<p>📞 7767933864</p>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<div class="hero-content">
+<h1>Riyasat Krishna Residency</h1>
+<p>Luxury Living | Smart Investment</p>
+<button class="btn" onclick="callNow()">Call Now</button>
+</div>
+</section>
+
+<!-- SLIDER -->
+<div class="slider">
+
+<div class="slide"><img src="12.jpeg"></div>
+<div class="slide"><img src="13.jpeg"></div>
+<div class="slide"><img src="12.jpeg"></div>
+
+</div>
+
+<!-- DETAILS -->
+<div class="details">
+<h2>Project Details</h2>
+<p><b>Location:</b> Bhankrota, Jaipur</p>
+<p><b>Price:</b> Contact for Details</p>
+<p><b>Plot Size:</b> Starting from 111 Yards</p>
+</div>
+
+<!-- FACILITIES -->
+<div class="facilities">
+<h3>Facilities</h3>
+<ul>
+<li>Boom Barrier</li>
+<li>Landscaped Park</li>
+<li>Water Pipeline</li>
+<li>Boundary Wall</li>
+<li>Borewell</li>
+<li>Electricity</li>
+<li>Sewage System</li>
+<li>Security</li>
+<li>Road & Demarcation</li>
+</ul>
+</div>
+
+<!-- CALL BUTTON -->
+<a href="tel:7767933864" class="call-btn">📞 Call</a>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Riyasat Krishna Residency | Designed by Lokesh
+</footer>
+
+<script>
+let index=0;
+let slides=document.getElementsByClassName("slide");
+
+function show(){
+for(let i=0;i<slides.length;i++){
+slides[i].style.display="none";
+}
+index++;
+if(index>slides.length){index=1;}
+slides[index-1].style.display="block";
+setTimeout(show,3000);
+}
+show();
+
+function callNow(){
+window.location.href="tel:7767933864";
+}
+</script>
+
+</body>
+</html>

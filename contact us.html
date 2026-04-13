@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Luxury Realty</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#141e30,#243b55);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+}
+
+/* CONTAINER */
+.contact-box{
+width:100%;
+max-width:600px;
+background:rgba(255,255,255,0.1);
+backdrop-filter:blur(15px);
+padding:40px;
+border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+h1{
+text-align:center;
+margin-bottom:25px;
+font-size:2.5rem;
+color:#ffd54f;
+}
+
+/* INPUT GROUP */
+.form-group{
+margin-bottom:20px;
+}
+
+label{
+display:block;
+margin-bottom:6px;
+font-weight:500;
+}
+
+input{
+width:100%;
+padding:12px;
+border:none;
+border-radius:10px;
+outline:none;
+background:rgba(255,255,255,0.2);
+color:#fff;
+}
+
+input::placeholder{
+color:#ddd;
+}
+
+input:focus{
+background:rgba(255,255,255,0.3);
+}
+
+/* BUTTON */
+button{
+width:100%;
+padding:14px;
+background:#ffd54f;
+color:#000;
+border:none;
+border-radius:30px;
+font-weight:600;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25d366;
+color:#fff;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 5px 20px rgba(0,0,0,0.4);
+}
+
+/* MOBILE */
+@media(max-width:600px){
+.contact-box{
+padding:25px;
+}
+h1{
+font-size:2rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="contact-box">
+
+<h1>Contact Us</h1>
+
+<form onsubmit="return sendToWhatsApp()">
+
+<div class="form-group">
+<label>Name</label>
+<input type="text" id="name" placeholder="Enter your name" required>
+</div>
+
+<div class="form-group">
+<label>Email</label>
+<input type="email" id="email" placeholder="Enter your email">
+</div>
+
+<div class="form-group">
+<label>Phone</label>
+<input type="tel" id="number" placeholder="Enter phone number" required>
+</div>
+
+<div class="form-group">
+<label>Interested Property</label>
+<input type="text" id="property" placeholder="Enter location / project">
+</div>
+
+<button type="submit">Send on WhatsApp</button>
+
+</form>
+
+</div>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/917767933864" class="whatsapp">💬</a>
+
+<script>
+function sendToWhatsApp(){
+
+var name = document.getElementById("name").value;
+var email = document.getElementById("email").value;
+var number = document.getElementById("number").value;
+var property = document.getElementById("property").value;
+
+var message = `Name: ${name}%0AEmail: ${email}%0APhone: ${number}%0AProperty: ${property}`;
+var url = `https://wa.me/917767933864?text=${message}`;
+
+window.open(url,"_blank");
+
+return false;
+}
+</script>
+
+</body>
+</html>
